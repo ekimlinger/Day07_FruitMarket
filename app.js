@@ -16,19 +16,16 @@ var randomInitialPrice = function() {
 
 console.log(randomInitialPrice());
 
-var apple = new Fruit("Apples", randomInitialPrice(), 0, 0, "apple");
-var banana = new Fruit("Bananas", randomInitialPrice(), 0, 0, "banana");
-var orange = new Fruit("Oranges", randomInitialPrice(), 0, 0, "orange");
-var grape = new Fruit("Grapes", randomInitialPrice(), 0, 0, "grape");
-var pear = new Fruit("Pears", randomInitialPrice(), 0, 0, "pear");
-var watermelon = new Fruit("Watermelons", randomInitialPrice(), 0, 0, "watermelon");
-//var timer = setInterval(beginGame, 300000);
-
-// var timer = setInterval(priceUpdate, 15000);
+var apple = new Fruit("Apples", randomInitialPrice(), [], 0, "apple");
+var banana = new Fruit("Bananas", randomInitialPrice(), [], 0, "banana");
+var orange = new Fruit("Oranges", randomInitialPrice(), [], 0, "orange");
+var grape = new Fruit("Grapes", randomInitialPrice(), [], 0, "grape");
+var pear = new Fruit("Pears", randomInitialPrice(), [], 0, "pear");
+var watermelon = new Fruit("Watermelons", randomInitialPrice(), [], 0, "watermelon");
 
 var counter = 0;
 var timer;
-var cash=1000;
+var cash=10000;
 
 function beginGame() {
   timer = setInterval(priceUpdate, 3000);
@@ -45,7 +42,7 @@ function randomNumber(min, max){
 
 function buy(){
   console.log(this);
-   var myClass = $(this).data("className");
+   var myClass = $(this).data('classname');
    console.log(myClass);
    for( i=0; i<fruits.length; i++){
      if(myClass==fruits[i].className && cash>=fruits[i].price){
@@ -53,36 +50,59 @@ function buy(){
        cash-=fruits[i].price;
        fruits[i].inventory++;
        $('.'+fruits[i].className+'-inventory').html(fruits[i].inventory);
+       $('.bank').html(cash/100);
+
+       fruits[i].averagePrice.push(fruits[i].price);
+       $('.'+fruits[i].className+'-expense').html('$'+Math.round(calcAverage(fruits[i].averagePrice) )/100);
+
       }
    }
+}
 
+function calcAverage(array){
+  var sum=0;
+  for(var j=0; j<array.length; j++){
+    sum+=parseInt(array[j]);
 
-
-  var inventory;
-  inventory = $(this).closest('.apple-inventory').data('inventory');
-  inventory++;
-  $(this).closest('.apple-inventory').data('inventory', inventory);
-  $(this).closest('.apple-inventory').html(inventory); // check class name
+  }
+  return sum/array.length;
 }
 
 function sell() {
   console.log(this);
-  var price=$(this).parent().data('price');
-  cash+=price;
-  var inventory;
-  inventory = $(this).closest('.apple-inventory').data('inventory');
-  inventory++;
-  $(this).closest('.apple-inventory').data('inventory', inventory);
-  $(this).closest('.apple-inventory').html(inventory); // check class name
+  var myClass = $(this).data('classname');
+  console.log(myClass);
+  for( i=0; i<fruits.length; i++){
+    if(myClass==fruits[i].className && fruits[i].inventory > 0){
+
+      cash+=fruits[i].price;
+      fruits[i].inventory--;
+      $('.'+fruits[i].className+'-inventory').html(fruits[i].inventory);
+      $('.bank').html(cash/100);
+     }
+  }
 
 }
 
 function priceUpdate() {
   counter++;
-  console.log(counter);
-  console.log('price update');
 
-  if (counter == 20) {
+
+  if (counter == 10) { //change coutner latter
+
+    for(i=0; i<fruits.length;i++){
+      if(fruits[i].inventory>0){
+        var fireSale=0;
+        fireSale=fruits[i].inventory*fruits[i].price;
+        fruits[i].inventory=0;
+        $('.'+fruits[i].className+'-inventory').html(fruits[i].inventory);
+        cash+=fireSale;
+
+
+      }
+    }
+    $('.bank').html(cash/100);
+    alert("Your you earned: $"+(cash-10000)/100);
     clearInterval(timer);
   }
 
@@ -107,10 +127,14 @@ $(document).ready(function() {
   $('.start').on('click', beginGame);
 
   $('.apple-buy').on('click', buy);
-  $('.grape-buy').on('click', buy);
   $('.orange-buy').on('click', buy);
   $('.banana-buy').on('click', buy);
   $('.pear-buy').on('click', buy);
-  $('.watermelon-buy').on('click', buy);
+
+  $('.apple-sell').on('click', sell);
+  $('.orange-sell').on('click', sell);
+  $('.banana-sell').on('click', sell);
+  $('.pear-sell').on('click', sell);
+
 
 });

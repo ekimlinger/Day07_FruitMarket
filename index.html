@@ -5,100 +5,85 @@
     <title>Title</title>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-​
+
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
-​
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-    <div class="container head text-center">
-        <h1>Fruit Market</h1>
-        <button class="start">Start Game</button>
+    <header>
+        <div class="container head text-center">
+            <h1>
+                <img class="left" src="KappacatBLUE.png">
+                <img class="left" src="KappacatBLUE.png">
+                <img class="left" src="KappacatBLUE.png">
+                <img class="left" src="KappacatBLUE.png">
+                Hammerin' Hank's Fruit Market!
+                <img class="right" src="KappacatBLUE.png">
+                <img class="right" src="KappacatBLUE.png">
+                <img class="right" src="KappacatBLUE.png">
+                <img class="right" src="KappacatBLUE.png">
+            </h1>
+        </div>
+
+    </header>
+    <hr>
+    <div class="container text-center">
+    <button class="btn start"> Start </button>
     </div>
-​
-    <div class="well col-md-2 apple-container">
-        <button class="btn apple-buy">Apple Buy: </button>
+    <hr>
+    <hr>
+    <div class="well col-md-2  col-md-offset-2 apple-container  text-center">
+        <button class="btn apple-buy " data-className='apple'>Buy Apple
         <p>Price: $<span class="apple-price">0.00</span></p>
-        <button class="btn apple-sell">Sell Apple</button>
+        </button>
+
+        <button class="btn apple-sell " data-className='apple'>Sell Apple</button>
         <p>Inventory: <span class="apple-inventory">0</span></p>
         <p>Average Expense: <span class="apple-expense">0</span></p>
     </div>
-    <div class=" well col-md-2 orange-container">
-        <button class="btn orange-buy">Orange Buy: </button>
+
+    <div class=" well col-md-2 orange-container text-center">
+        <button class="btn orange-buy" data-className='orange'>Buy Orange
         <p>Price: $<span class="orange-price">0.00</span></p>
-        <button class="btn orange-sell">Sell Orange</button>
+        </button>
+        <button class="btn orange-sell" data-className='orange'>Sell Orange</button>
         <p>Inventory: <span class="orange-inventory">0</span></p>
         <p>Average Expense: <span class="orange-expense">0</span></p>
     </div>
-    <div class=" well col-md-2 banana-container">
-        <button class="btn banana-buy">Banana Buy: </button>
-        <p>Price: $<span class="banana-price">0.00</span></p>
-        <button class="btn banana-sell">Sell Banana</button>
+    <div class=" well col-md-2 banana-container text-center">
+        <button class="btn banana-buy" data-className='banana'>Buy Banana
+            <p>Price: $<span class="banana-price">0.00</span></p>
+        </button>
+        <button class="btn banana-sell" data-className='banana' >Sell Banana</button>
         <p>Inventory: <span class="banana-inventory">0</span></p>
         <p>Average Expense: <span class="banana-expense">0</span></p>
     </div>
-    <div class=" well col-md-2 grape-container">
-        <button class="btn grape-buy">Grape Buy: </button>
-        <p>Price: $<span class="grape-price">0.00</span></p>
-            <button class="btn grape-sell">Sell Grape</button>
-        <p>Inventory: <span class="grape-inventory">0</span></p>
-        <p>Average Expense: <span class="grape-expense">0</span></p>
-    </div>
-    <div class=" well col-md-2 pear-container">
-        <button class="btn pear-buy">Pear Buy: </button>
-        <p>Price: $<span class="pear-price">0.00</span></p>
-            <button class="btn pear-sell">Sell Pear</button>
+    <!--<div class=" well col-md-2 grape-container text-center">-->
+        <!--<button class="btn grape-buy">Grape Buy: </button>-->
+        <!--<p>Price: $<span class="grape-price">0.00</span></p>-->
+            <!--<button class="btn grape-sell">Sell Grape</button>-->
+        <!--<p>Inventory: <span class="grape-inventory">0</span></p>-->
+        <!--<p>Average Expense: <span class="grape-expense">0</span></p>-->
+    <!--</div>-->
+    <div class=" well col-md-2 pear-container text-center">
+        <button class="btn pear-buy" data-className='pear'>Buy Pear
+            <p>Price: $<span class="pear-price">0.00</span></p>
+        </button>
+            <button class="btn pear-sell" data-className='pear' >Sell Pear</button>
         <p>Inventory: <span class="pear-inventory">0</span></p>
         <p>Average Expense: <span class="pear-expense">0</span></p>
     </div>
-    <div class=" well col-md-2 watermelon-container">
-        <button class="btn watermelon-buy">Watermelon Buy: </button>
-        <p>Price: $<span class="watermelon-price">0.00</span></p>
-            <button class="btn watermelon-sell">Sell Watermelon</button>
-        <p>Inventory: <span class="watermelon-inventory">0</span></p>
-        <p>Average Expense: <span class="watermelon-expense">0</span></p>
-    </div>
-​
-​
-    <!--<div class="container buy text-center">-->
-        <!--<button class="btn apple-buy">Apple Buy: </button>-->
-        <!--<button class="btn orange-buy">Orange Buy: </button>-->
-        <!--<button class="btn banana-buy">Banana Buy: </button>-->
-        <!--<button class="btn grape-buy">Grape Buy: </button>-->
-        <!--<button class="btn pear-buy">Grape Buy: </button>-->
+    <div class="col-md-offset-2"></div>
+    <!--<div class=" well col-md-2 watermelon-container text-center">-->
+        <!--<button class="btn watermelon-buy">Watermelon Buy: </button>-->
+        <!--<p>Price: $<span class="watermelon-price">0.00</span></p>-->
+            <!--<button class="btn watermelon-sell">Sell Watermelon</button>-->
+        <!--<p>Inventory: <span class="watermelon-inventory">0</span></p>-->
+        <!--<p>Average Expense: <span class="watermelon-expense">0</span></p>-->
     <!--</div>-->
-    <!--<div class="container price text-center">-->
-        <!--<p>Price: $<span class="apple-price"</span>-->
-        <!--<p>Price: $<span class="orange-price"</span>-->
-        <!--<p>Price: $<span class="banana-price"</span>-->
-        <!--<p>Price: $<span class="grape-price"</span>-->
-        <!--<p>Price: $<span class="pear-price"</span>-->
-    <!--</div>-->
-    <!--<div class="container sell text-center">-->
-        <!--&lt;!&ndash;market prices&ndash;&gt;-->
-        <!--<button class="btn apple-sell">Sell Apple</button>-->
-        <!--<button class="btn orange-sell">Sell Orange</button>-->
-        <!--<button class="btn banana-sell">Sell Banana</button>-->
-        <!--<button class="btn grape-sell">Sell Grape</button>-->
-        <!--<button class="btn pear-sell">Sell Grape</button>-->
-    <!--</div>-->
-    <!--<div class="container inventory text-center">-->
-        <!--<p>Inventory:<span class="apple-inventory"></span></p>-->
-        <!--<p>Inventory:<span class="orange-inventory"></span></p>-->
-        <!--<p>Inventory:<span class="banana-inventory"></span></p>-->
-        <!--<p>Inventory:<span class="grape-inventory"></span></p>-->
-        <!--<p>Inventory:<span class="pear-inventory"></span></p>-->
-    <!--</div>-->
-    <!--<div class="container expense text-center">-->
-        <!--<p>Average Expense: <span class="apple-expense"></span></p>-->
-        <!--<p>Average Expense: <span class="orange-expense"></span></p>-->
-        <!--<p>Average Expense: <span class="banana-expense"></span></p>-->
-        <!--<p>Average Expense: <span class="grape-expense"></span></p>-->
-        <!--<p>Average Expense: <span class="pear-expense"></span></p>-->
-    <!--</div>-->
-    <!---->
-​
-    <div class="container text-center">
+
+
+    <div class="container text-center col-md-12">
         <h2>Your Bank: $ <span class="bank">100.00</span></h2>
     </div>
 </body>
