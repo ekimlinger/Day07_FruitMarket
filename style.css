@@ -214,8 +214,12 @@ display: none;
   /*margin-right: 10px;*/
 }
 
-a:hover {
+.credits a:hover {
   text-decoration: none;
   position: relative;
   top: -2px;
+}
+
+footer {
+  height: 300px;
 }
