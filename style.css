@@ -1,38 +1,87 @@
-body{
-    /*4377b1*/
-    background: #337277;
+.prime {
+  display: inline;
+  position: absolute;
+  left: 100px;
+  top: 50px;
 }
 
-.head {
+.top{
+    /*4377b1*/
     background-image: url('fruitstand.jpg');
     background-repeat: no-repeat;
-    height:300px;
+    background-size: cover;
+    background-position: 0 50%, center;
+    height: 500px;
+    margin-bottom: 25px;
+}
+
+/*.kappa-cat {
+  border: none;
+  background: rgba(0,0,0,0);
+}
+
+.kappa-cat img {
+  position: relative;
+  left: -20%;
+  /*right: -20%;*/
+  /*transform: translateX(-100%);*/
+
+
+.banner {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+    /*background-image: url('fruitstand.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*border: solid;*/
+
 }
 
 h1 {
-    background: #337277;
 
-    padding: 25px;
-    border-radius:5px;
-    border: 2px solid black;
+  font-size: 80px;
+  color: rgb(210, 244, 249);
+    /*background: #B24900;*/
+    /*margin: 10px 0 -15px 0;*/
+    /*padding: 25px;*/
+    /*border-radius:5px;*/
+    /*border: 2px solid black;*/
 }
 
 .left {
     margin-left: 5px;
     height: 50px;
-    float: left;
+    float: right;
 }
 .right{
     margin-right: 5px;
     height: 50px;
-    float: right;
+    float: left;
 }
+
+.btn-primary {
+  color: black;
+  background-color: rgb(120, 198, 195);
+  border-color: rgb(88, 181, 177);
+}
+
 p{
     font-weight: bold;
     font-size: inherit;
+    color: #4377b1;
+    background: aliceblue;
 }
+
+.start-btn {
+
+}
+.inner{
+    margin: 0 2.5%;
+    padding: 0 2.5%;
+}
+
 .apple-container{
-    background-color: red;
+  background-color: red;
 
 }
 
@@ -49,39 +98,87 @@ p{
     background-color: greenyellow;
 }
 
-/*.grape-container{*/
-/*background-color: rebeccapurple;*/
-
-
-/*}*/
-/*.watermelon-container{*/
-/*background-color: salmon;*/
-
-
-/*}*/
 
 .apple-buy, .pear-buy, .banana-buy, .orange-buy {
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   /*background-size: cover;*/
-  background-size: 100%;
-  height: 120px;
-  width: 120px;
-  /*overflow: visible;*/
+  height: 150px;
+  width: 150px;
+  font-weight: bold;
+  color: aliceblue;
+
 }
 
 .apple-buy {
-    background-image: url('apple.png') ;
-
+    background-image: url('apple.png');
 }
+
+.apple-buy p {
+  background-color: rgba(255, 255, 255, 0);
+}
+
 .banana-buy{
     background-image: url('bananas.png') ;
-
  }
+
+.banana-buy p {
+  background-color: rgba(0,0,0,0);
+}
+
 .orange-buy{
     background-image: url('orange.png') ;
 
 }
 .pear-buy{
-    background-image: url('pear.png') ;
+    background-image: url('pear.png');
 
+}
+/*.start-btn{
+    background: #B24900;
+    border: solid;
+}*/
+
+.apple-sell, .pear-sell, .banana-sell, .orange-sell{
+    margin: 10px 10px;
+}
+.right-prime{
+    float: right;
+    margin: 10px 0;
+    height: 75px;
+}
+.left-prime{
+    float: left;
+    margin: 10px 0;
+    height: 75px;
+
+}
+
+/* Roman added some styling below */
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+
+}
+.message {
+top: 50%;
+position: fixed;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 1;
+text-align:center;
+display: none;
+}
+.message p {
+  font-size: 2em;
+	font-weight: bold;
+  padding: 10px;
+  background: #CAEFF5;
+  border: 2px solid #0087BF;
+  border-radius: 5px;
+	color: #008CB9;
+	line-height: 1.25em;
 }
