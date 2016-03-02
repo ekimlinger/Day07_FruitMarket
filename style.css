@@ -1,8 +1,8 @@
 .prime {
-  display: inline;
+  display: inline-block;
   position: absolute;
-  left: 100px;
-  top: 50px;
+  left: 75px;
+  top: 75px;
 }
 
 .prime img {
@@ -34,7 +34,7 @@
 
 .banner {
   position: relative;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
     /*background-image: url('fruitstand.jpg');*/
     /*background-repeat: no-repeat;*/
@@ -45,7 +45,7 @@
 h1 {
 
   font-size: 80px;
-  color: rgb(210, 244, 249);
+  color: rgb(255, 255, 255);
     /*background: #B24900;*/
     /*margin: 10px 0 -15px 0;*/
     /*padding: 25px;*/
@@ -53,11 +53,7 @@ h1 {
     /*border: 2px solid black;*/
 }
 
-.left {
-    margin-left: 5px;
-    height: 50px;
-    float: right;
-}
+
 .right{
     margin-right: 5px;
     height: 50px;
@@ -68,12 +64,17 @@ h1 {
   color: black;
   background-color: rgb(120, 198, 195);
   border-color: rgb(88, 181, 177);
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
 }
 
 p {
     font-weight: bold;
     font-size: inherit;
-    color: #4377b1;
+    color: #ffffff;
     /*background: aliceblue;*/
 }
 
@@ -86,8 +87,7 @@ p {
 }
 
 .apple-container, .orange-container, .banana-container, .pear-container {
-  background-color: rgna
-
+  text-align: center;
 }
 
 .apple-container{
@@ -108,23 +108,35 @@ p {
     background-color: rgb(199, 217, 93);
 }
 
+.apple-container p:first-of-type, .pear-container  p:first-of-type, .orange-container p:first-of-type, .banana-container p:first-of-type {
+  display: block;
+  position: relative;
+  top: 10px;
+}
+
+.apple-container img:first-of-type, .pear-container  img:first-of-type, .orange-container img:first-of-type, .banana-container img:first-of-type {
+  display: block;
+  height: 100px;
+  margin: auto;
+
+}
 
 .apple-buy, .pear-buy, .banana-buy, .orange-buy {
+  display: block;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   /*background-size: cover;*/
   height: 150px;
   width: 150px;
   font-weight: bold;
-  color: aliceblue;
-
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
 .apple-buy, .banana-buy, .orange-buy, .pear-buy {
-  cursor: pointer;
-  /*border: 1px darkgrey solid;*/
+  margin: auto;
 
-  color: white;
 }
 
 .apple-buy p, .banana-buy p, .orange-buy p, .pear-buy p {
@@ -134,41 +146,31 @@ p {
 
 .apple-buy {
   background-color: rgba(190, 49, 49, 0.91);
+  border: 1px rgba(152, 14, 14, 0.91) solid;
   background-image: url('apple.png');
 }
 
 .banana-buy{
   background-color: rgba(200, 167, 26, 0.9);
+  border: 1px rgba(154, 125, 0, 0.9) solid;
   background-image: url('bananas.png');
  }
 
 .orange-buy{
   background-color: rgba(209, 118, 36, 0.9);
+  border: 1px rgba(179, 86, 4, 0.9) solid;
   background-image: url('orange.png') ;
 }
 .pear-buy{
   background-color: rgba(166, 189, 35, 0.9);
+  border: 1px rgba(119, 140, 0, 0.9) solid;
   background-image: url('pear.png');
 }
 
-/*.start-btn{
-    background: #B24900;
-    border: solid;
-}*/
+
 
 .apple-sell, .pear-sell, .banana-sell, .orange-sell{
     margin: 10px 10px;
-}
-.right-prime{
-    float: right;
-    margin: 10px 0;
-    height: 75px;
-}
-.left-prime{
-    float: left;
-    margin: 10px 0;
-    height: 75px;
-
 }
 
 /* Roman added some styling below */
@@ -198,4 +200,22 @@ display: none;
   border-radius: 5px;
 	color: #008CB9;
 	line-height: 1.25em;
+}
+
+.credits ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.credits li {
+  display: inline;
+  text-align: center;
+  /*margin-right: 10px;*/
+}
+
+a:hover {
+  text-decoration: none;
+  position: relative;
+  top: -2px;
 }

@@ -29,6 +29,7 @@ var cash=10000;
 //funciton begin first game
 function beginGame() {
   timer = setInterval(priceUpdate, 15000);
+  displayClock();
   priceUpdate();
 }
 
@@ -53,9 +54,7 @@ function randomNumber(min, max){
 
 //main funciton priceUpdate updates every 5 sec. and will be stoped at 5 min.
 function priceUpdate() {
-  counter++;
   if (counter == 20) { //change coutner latter to 20
-
     for(i=0; i<fruits.length;i++){
       if(fruits[i].inventory>0){
         var fireSale=0;
@@ -71,6 +70,8 @@ function priceUpdate() {
     $('.alert-message').html("You earned: $"+(cash-10000)/100)
     $('.message').show();
     //alert("Your you earned: $"+(cash-10000)/100);
+    counter++;
+
   }
 
   for(var i=0;i<fruits.length; i++){
@@ -86,6 +87,22 @@ function priceUpdate() {
     $('.'+fruits[i].className+'-price').text(fruits[i].price / 100);
   }
 
+}
+
+function displayClock(){
+  timeLeft=300;
+  setInterval(function(){
+      timeLeft--;
+      var minutes = parseInt(timeLeft /60);
+      var seconds = parseInt(timeLeft%60);
+      if (seconds <10){
+        seconds = "0" +seconds;
+      }
+      $('.timer').text("Time left: " + minutes +":" +seconds);
+      if (timeLeft <=0){
+        clearInterval(this);
+      }
+  },1000);
 }
 
 //buy funciton
@@ -146,5 +163,6 @@ $(document).ready(function() {
   $('.pear-sell').on('click', sell);
 
   $('.start-over-button').on('click', tryAgain);
+
 
 });
