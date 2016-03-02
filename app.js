@@ -41,6 +41,7 @@ function tryAgain () {
     $('.'+fruits[i].className+'-expense').html(0);
   }
   cash=10000;
+  counter = 0;
   $('.bank').html('100.00')
   beginGame();
 }
