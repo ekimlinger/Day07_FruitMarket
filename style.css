@@ -1,6 +1,8 @@
 .prime {
   display: inline;
   position: absolute;
+  height: 15%;
+  width: auto;
   left: 100px;
   top: 50px;
 }
