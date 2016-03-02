@@ -10,9 +10,9 @@
   width: auto;
 }
 
-.top{
+.top {
     /*4377b1*/
-    background-image: url('fruitstand.jpg');
+    background-image: url('images/fruitstand.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 50%, center;
@@ -152,24 +152,24 @@ p {
 .apple-buy {
   background-color: rgba(190, 49, 49, 0.91);
   border: 1px rgba(152, 14, 14, 0.91) solid;
-  background-image: url('apple.png');
+  background-image: url('images/apple.png');
 }
 
 .banana-buy{
   background-color: rgba(200, 167, 26, 0.9);
   border: 1px rgba(154, 125, 0, 0.9) solid;
-  background-image: url('bananas.png');
+  background-image: url('images/bananas.png');
  }
 
 .orange-buy{
   background-color: rgba(209, 118, 36, 0.9);
   border: 1px rgba(179, 86, 4, 0.9) solid;
-  background-image: url('orange.png') ;
+  background-image: url('images/orange.png') ;
 }
 .pear-buy{
   background-color: rgba(166, 189, 35, 0.9);
   border: 1px rgba(119, 140, 0, 0.9) solid;
-  background-image: url('pear.png');
+  background-image: url('images/pear.png');
 }
 
 
@@ -207,26 +207,27 @@ display: none;
 	line-height: 1.25em;
 }
 
-footer h4 {
+.credits, .dev-names li {
   text-align: center;
-  margin-bottom: 25px;
 }
 
-footer ul {
+.dev-names h4 {
+  margin: 25px 25px;
+  padding: 0;
+}
+
+.dev-names  {
   list-style-type: none;
-  position: relative;
-  top: 20%;
   margin: 0;
   padding: 0;
 }
 
-footer li {
+.dev-names li {
   display: inline;
-  text-align: center;
   /*margin-right: 10px;*/
 }
 
-footer a:hover {
+.dev-names a:hover {
   text-decoration: none;
   position: relative;
   top: -2px;
@@ -235,4 +236,17 @@ footer a:hover {
 footer {
   background-color: rgb(231, 226, 226);
   height: 300px;
+  padding-top: 25px;
+}
+
+.dev-linkedin {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.dev-linkedin img {
+  height: 15px;
+  width: auto;
 }
