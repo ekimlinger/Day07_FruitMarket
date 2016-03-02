@@ -39,13 +39,18 @@
     /*background-image: url('fruitstand.jpg');*/
     /*background-repeat: no-repeat;*/
     /*border: solid;*/
+}
 
+.intro {
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px black;
 }
 
 h1 {
 
   font-size: 80px;
   color: rgb(255, 255, 255);
+  text-shadow: 1px 1px black;
     /*background: #B24900;*/
     /*margin: 10px 0 -15px 0;*/
     /*padding: 25px;*/

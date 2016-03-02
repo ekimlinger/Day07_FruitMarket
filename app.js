@@ -54,6 +54,7 @@ function randomNumber(min, max){
 
 //main funciton priceUpdate updates every 5 sec. and will be stoped at 5 min.
 function priceUpdate() {
+
   if (counter == 20) { //change coutner latter to 20
     for(i=0; i<fruits.length;i++){
       if(fruits[i].inventory>0){
@@ -66,12 +67,11 @@ function priceUpdate() {
     }
     $('.bank').html(cash/100);
     clearInterval(timer);
+    clearInterval(clockTimer);
     $(".main").addClass("blur");
     $('.alert-message').html("You earned: $"+(cash-10000)/100)
     $('.message').show();
     //alert("Your you earned: $"+(cash-10000)/100);
-    counter++;
-
   }
 
   for(var i=0;i<fruits.length; i++){
@@ -86,12 +86,13 @@ function priceUpdate() {
     }
     $('.'+fruits[i].className+'-price').text(fruits[i].price / 100);
   }
+  counter++;
 
 }
-
+var clockTimer;
 function displayClock(){
   timeLeft=300;
-  setInterval(function(){
+  clockTimer = setInterval(function(){
       timeLeft--;
       var minutes = parseInt(timeLeft /60);
       var seconds = parseInt(timeLeft%60);
@@ -100,7 +101,7 @@ function displayClock(){
       }
       $('.timer').text("Time left: " + minutes +":" +seconds);
       if (timeLeft <=0){
-        clearInterval(this);
+
       }
   },1000);
 }
