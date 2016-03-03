@@ -32,6 +32,7 @@ var clockTimer;// This displays a clock for the user to know how much time of ga
 //This begins the game, starts the clock, and displays a random price.
 function beginGame() {
   timer = setInterval(priceUpdate, 15000);
+  $('.start').fadeOut('fast');
   displayClock();
   priceUpdate();
 }
@@ -149,7 +150,7 @@ function sell() {
 
 $(document).ready(function() {
 
-  $('.start').on('click', beginGame);
+  $('.start').one('click', beginGame);
 
   $('.apple-buy').on('click', buy);
   $('.orange-buy').on('click', buy);

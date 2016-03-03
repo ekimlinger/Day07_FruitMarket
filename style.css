@@ -239,14 +239,28 @@ footer {
   padding-top: 25px;
 }
 
-.dev-linkedin {
+.dev-profiles {
   margin: 0;
   padding: 0;
   list-style-type: none;
   text-align: center;
 }
 
+.dev-profiles img {
+  height: 15px;
+  width: auto;
+  margin: 5px;
+}
+/*
+.dev-profile {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  display:inline;
+}
+
 .dev-linkedin img {
   height: 15px;
   width: auto;
-}
+}*/
